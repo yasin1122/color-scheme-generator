@@ -25,7 +25,6 @@ function renderColors(color = "0047AB", scheme = "monochrome") {
         })
         .join("");
 
-      // Insert the generated HTML into <main>
       document.querySelector("main").innerHTML = htmlStr;
 
       // Attach a click event listener to each .color-container
@@ -37,8 +36,13 @@ function renderColors(color = "0047AB", scheme = "monochrome") {
           // Copy the hex code to the clipboard
           navigator.clipboard.writeText(code)
             .then(() => {
-              console.log(`Copied ${code} to clipboard`);
-              // Optionally, provide visual feedback to the user here.
+              const codeElement = container.querySelector('.color-code');
+              const originalText = codeElement.textContent;
+              codeElement.textContent = "Copied!";
+              
+              setTimeout(() => {
+                codeElement.textContent = originalText;
+              }, 500);
             })
             .catch(err => console.error("Failed to copy the color code:", err));
         });
@@ -47,10 +51,8 @@ function renderColors(color = "0047AB", scheme = "monochrome") {
     .catch(error => console.error("Error fetching color scheme:", error));
 }
 
-// Initial render of the default scheme
 renderColors();
 
-// Listen for the form submit to update the scheme
 document.getElementById("color-scheme-form").addEventListener("submit", function(e) {
   e.preventDefault();
   const color = document.getElementById("color-picker").value;
