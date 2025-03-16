@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 2vw;
+}
+
+main {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.color-display {
+    /* width: 100px; */
+    height: 60vh;
+}
+
+h1 {
+    text-align: center;
+    text-shadow: 2px 1px 1px yellowgreen;
+}
+
+#red {
+    color: red;
+    text-decoration: darkred underline wavy;
+}
+
+#green {
+    color: green;
+    text-decoration: darkgreen underline wavy;
+}
+
+#blue {
+    color: blue;
+    text-decoration: darkblue underline wavy;
+}
+
+p {
+    margin-top: 1rem;
+}
+
+/* Style the form as a horizontal flex container */
+#color-scheme-form {
+  display: flex;
+  align-items: stretch;      /* Vertically center the elements */
+  gap: 1rem;                /* Space between elements */
+  padding: 1rem 0;
+  background-color: #f8f8f8;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  flex-wrap: wrap;          /* Allow wrapping on smaller screens */
+}
+
+/* Make the color input and dropdown stretch to fill available space */
+#color-scheme-form input[type="color"],
+#color-scheme-form select {
+  flex: 1 1 auto;
+  padding: 0.1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: auto;
+}
+
+/* Style the submit button */
+#color-scheme-form button {
+  padding: 0.5rem 1rem;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  flex: 0 0 auto;
+}
+
+#color-scheme-form button:hover {
+  background-color: #005bb5;
+}
